@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+
+@custom-variant advanced (&:where(.advanced, .advanced *));
+
+
+@theme {
+    --color-midnight-500:hsl(214, 47%, 23%);
+    --color-midnight-950:hsl(237, 49%, 15%);
+    --color-midnight-50:hsl(229,25%,31%);
+
+    --font-barlow:"Barlow_Semi_Condensed", sans-serif;
+    --font-Poppins:"Poppins", sans-serif;
+}
+
+
+@layer {
+    .background {
+        @apply bg-gradient-to-b lg:bg-radial-[at_50%_0%] 
+        from-midnight-500 to-80% from-20% to-midnight-950 
+        bg-no-repeat
+        py-8 
+        overflow-hidden 
+    }
+
+    .header {
+        @apply flex flex-row justify-between items-center p-3 mx-7
+        border-3 border-[hsl(217,16%,45%)] rounded-md
+
+        lg:mx-100
+    }
+
+    .customBarlow {
+        @apply font-barlow tracking-widest scale-x-80 font-bold
+    }
+
+    .score {
+        @apply flex flex-col items-center
+        bg-white rounded-sm py-2 px-6
+
+        lg:px-10 lg:py-3
+    }
+
+    .body {
+        @apply 
+        relative
+        /* mt-35 mb-38  */
+        /* lg:mb-10 */
+
+        /* lg:advanced:mt-27 */
+    }
+
+    .optionShell {
+        @apply flex justify-center items-center absolute
+        bg-linear-to-bl rounded-full size-33
+        cursor-pointer hover:shadow-xl/40
+
+        transition-all duration-300
+
+        lg:size-42
+
+        advanced:size-27
+        lg:advanced:size-33
+    }
+
+    .option {
+        @apply bg-white bg-linear-to-b from-gray-300 to-gray-100
+        size-25 p-5.5 rounded-full
+        inset-shadow-[0px_7px_0px_hsl(217,10%,75%)]
+        
+        flex justify-center items-center
+
+        lg:size-32 lg:p-1
+
+        advanced:size-20
+        lg:advanced:size-24
+    }
+
+    #paper {
+        @apply -top-15 right-1/2 -translate-x-1/4
+        hover:shadow-[hsl(230,89%,62%)]
+
+        advanced:top-8 advanced:left-1/2 advanced:translate-x-1/2
+        lg:advanced:top-10 lg:advanced:translate-x-2/3
+    }
+
+    #scissors {
+        @apply -top-15 left-1/2 translate-x-1/4
+        hover:shadow-[hsl(39,89%,49%)]
+
+        advanced:-translate-x-1/2
+
+        lg:advanced:-top-15
+    }
+
+    #rock {
+        @apply -bottom-10 left-1/2 -translate-x-1/2
+        hover:shadow-[hsl(349,71%,52%)]
+
+        advanced:-bottom-17 advanced:translate-x-1/8
+
+    }
+
+    #lizard {
+        @apply 
+        hover:shadow-[hsl(261,73%,60%)]
+        pointer-events-none advanced:pointer-events-auto
+        advanced:opacity-100  
+        scale-90 advanced:scale-100
+
+        -bottom-17 -translate-x-1/8 right-1/2
+
+        lg:advanced:left-1/2 lg:advanced:-translate-x-5/4
+        lg:advanced:-bottom-18
+    }
+
+    #spock {
+        @apply 
+        hover:shadow-[hsl(189,59%,53%)]
+        pointer-events-none advanced:pointer-events-auto
+        advanced:opacity-100  
+        scale-90 advanced:scale-100
+
+        top-8 right-1/2 -translate-x-1/2
+
+        lg:advanced:top-10 lg:advanced:-translate-x-2/3
+    }
+
+    .footer {
+        @apply flex justify-between
+        lg:px-20
+    }
+
+    .footer>button {
+        @apply font-barlow text-white tracking-widest scale-x-80
+        text-sm
+        border px-8 rounded-xl
+        cursor-pointer hover:bg-white/50
+
+        lg:px-10 lg:py-2 lg:mt-8
+    }
+
+    .ruleOverlay {
+        @apply absolute h-full w-full z-50
+        bg-black/50 lg:pt-30 
+    }
+
+    .ruleOverlay>div {
+        @apply flex flex-col justify-evenly items-center 
+        h-full w-full bg-white rounded-2xl 
+        transition-all duration-300 
+
+        lg:w-fit lg:h-fit lg:p-8 lg:m-auto
+    }
+
+    .closedBtn {
+        @apply cursor-pointer
+    }
+
+    .renderOutline {
+        @apply flex justify-center items-center
+        bg-linear-to-bl rounded-full size-33
+
+        lg:size-55 lg:mt-8
+    }
+
+    .renderCore {
+        @apply bg-white bg-linear-to-b from-gray-300 to-gray-100
+        size-25 p-5.5 rounded-full inset-shadow-[0px_7px_0px_hsl(217,10%,75%)]
+
+        flex justify-center items-center
+
+        lg:size-42
+    }
+
+    .renderOutlinehide {
+        @apply size-33 flex justify-center items-center 
+        bg-midnight-950 rounded-full
+
+        lg:size-55 lg:mt-8
+    }
+
+    .renderCorehide {
+        @apply size-25 
+
+        lg:size-42
+    }
+
+    #youPicked, #housePicked {
+        @apply flex flex-col items-center lg:flex-col-reverse
+    }
+
+    .rockColor {
+        @apply inset-shadow-[0px_-7px_0px_hsl(348,64%,46%)] 
+        from-[hsl(349,70%,56%)] to-[hsl(349,71%,52%)]
+    }
+
+    .paperColor {
+        @apply inset-shadow-[0px_-7px_0px_hsl(229,64%,46%)] 
+        from-[hsl(230,89%,65%)] to-[hsl(230,89%,62%)]
+    }
+
+    .scissorsColor {
+        @apply inset-shadow-[0px_-7px_0px_hsl(38,100%,40%)] 
+        from-[hsl(40,84%,53%)] to-[hsl(39,89%,49%)]
+    }
+
+    .lizardColor {
+        @apply inset-shadow-[0px_-7px_0px_hsl(261,64%,46%)] 
+        from-[hsl(261,72%,63%)] to-[hsl(261,73%,60%)]
+    }
+
+    .spockColor {
+        @apply inset-shadow-[0px_-7px_0px_hsl(189,64%,46%)] 
+        from-[hsl(189,58%,57%)] to-[hsl(189,59%,53%)]
+    }
+
+    .winEffect {
+        @apply 
+        before:content-[''] before:absolute before:size-70 before:bg-midnight-50/15 before:-z-15 before:rounded-full
+        lg:before:size-140
+
+        after:content-[''] after:absolute after:size-55 after:bg-radial after:-z-10 after:rounded-full
+        after:from-midnight-50/35  after:to-midnight-50/20 after:to-10% after:from-53%
+        lg:after:size-110
+    }
+}
+
+
+@theme {
+    --animate-wiggle: wiggle 0.5s ease-in 3;
+    @keyframes wiggle {
+        0%, 100% {
+            transform: none;
+        }
+        50% {
+            transform: translateY(-20%);
+        }
+    }
+}
+
