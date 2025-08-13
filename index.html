@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./dist/output.css" rel="stylesheet">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+
+    <link href="src/output.css" rel="stylesheet" />
+
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {font-size: 11px; text-align: center;}
+      .attribution a {color: hsl(228, 45%, 44%);}
+    </style>
+  </head>
+
+  <body class="relative">
+
+    <div class="ruleOverlay hidden">
+      <div class="opacity-0">
+        <div class="lg:flex lg:justify-between lg:w-full lg:mb-10">
+          <p class="text-[hsl(217,16%,45%)] font-bold text-2xl">RULES</p>
+          <button class="closedBtn hidden lg:block">
+            <img src="images/icon-close.svg">
+          </button>
+        </div>
+
+        <div class="
+          bg-no-repeat bg-contain bg-center
+          bg-[url('../images/image-rules.svg')] size-60 ms-2 md:size-80
+
+          advanced:bg-[url('../images/image-rules-bonus.svg')] lg:advanced:mb-5
+          ">
+        </div>
+
+        <button class="closedBtn lg:hidden">
+          <img src="images/icon-close.svg">
+        </button>
+
+      </div>
+    </div>
+
+    <div class="background">
+      <div class="header">
+        <div class="
+          bg-no-repeat bg-contain bg-center
+          bg-[url('../images/logo.svg')] h-18 w-25 ms-2 md:h-22 md:w-35
+          transition-all duration-300
+          advanced:bg-[url('../images/logo-bonus.svg')] advanced:w-20 advanced:md:w-28
+          ">
+        </div>
+  
+        <div class="score">
+          <p class="text-[hsl(229,64%,46%)] text-[10px] 
+            customBarlow
+            md:text-[15px]
+          ">
+            SCORE
+          </p>
+          <p class="text-[hsl(229,25%,31%)] font-bold text-5xl font-Poppins mt-1
+          md:text-6xl
+          ">
+            0
+          </p>
+        </div>
+      </div>
+  
+      <div class="body">
+
+        <div id="phase-pick" class="">
+          <div class=" mx-auto w-full mt-35 mb-38 lg:mb-10
+            bg-no-repeat bg-contain bg-center
+            bg-[url('../images/bg-triangle.svg')] size-50 lg:size-62
+            transition-all duration-300
+            advanced:bg-[url('../images/bg-pentagon.svg')] lg:advanced:size-62
+            ">
+          </div>
+  
+          <div id="paper" data-name="paper" class="optionShell paperColor">
+            <div class="option">
+              <img src="images/icon-paper.svg">
+            </div>
+          </div>
+    
+          <div id="scissors" data-name="scissors" class="optionShell scissorsColor">
+            <div class="option">
+              <img src="images/icon-scissors.svg">
+            </div>
+          </div>
+    
+          <div id="rock" data-name="rock" class="optionShell rockColor">
+            <div class="option">
+              <img class="mt-2 ms-1" src="images/icon-rock.svg">
+            </div>
+          </div>
+  
+          <div id="lizard" data-name="lizard" class="optionShell lizardColor opacity-0">
+            <div class="option">
+              <img class="lg:p-4" src="images/icon-lizard.svg">
+            </div>
+          </div>
+  
+          <div id="spock" data-name="spock" class="optionShell spockColor opacity-0">
+            <div class="option">
+              <img src="images/icon-spock.svg">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="phase-result" class="mt-20 lg:mb-7 hidden">
+
+      </div>
+  
+      <div class="footer">
+        <button id="mode">ADVANCED MODE</button>
+        <button id="rules">RULES</button>
+      </div>
+    
+    </div>
+
+
+  <script src="main.js"></script>
+    
+  </body>
+</html>
